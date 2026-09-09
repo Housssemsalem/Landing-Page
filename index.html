@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Houssem Salem — Data Engineer focused on data integration, ETL, data quality, analytics and business intelligence." />
+  <title>Houssem Salem | Data Engineer</title>
+  <style>
+    :root{
+      --bg:#07111f;
+      --bg-soft:#0c1829;
+      --card:#0e1c2f;
+      --text:#edf5ff;
+      --muted:#98a8bc;
+      --line:rgba(255,255,255,.10);
+      --accent:#62d8ff;
+      --accent-2:#8b7cff;
+      --max:1120px;
+      --radius:22px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 80% 10%, rgba(98,216,255,.12), transparent 28%),
+        radial-gradient(circle at 20% 30%, rgba(139,124,255,.10), transparent 26%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:min(var(--max), calc(100% - 40px)); margin:auto}
+    .nav{
+      position:sticky;top:0;z-index:10;
+      background:rgba(7,17,31,.72);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{
+      height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px;
+    }
+    .brand{font-weight:800;letter-spacing:-.03em}
+    .brand span{color:var(--accent)}
+    .nav-links{display:flex;gap:26px;color:var(--muted);font-size:.94rem}
+    .nav-links a:hover{color:var(--text)}
+    .hero{
+      min-height:calc(100vh - 72px);
+      display:grid;align-items:center;
+      padding:80px 0 100px;
+    }
+    .hero-grid{
+      display:grid;grid-template-columns:1.3fr .7fr;gap:56px;align-items:center;
+    }
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.035);
+      padding:8px 13px;border-radius:999px;
+      color:#c8d8ea;font-size:.82rem;
+    }
+    .dot{width:8px;height:8px;border-radius:50%;background:#61e294;box-shadow:0 0 14px rgba(97,226,148,.7)}
+    h1{
+      font-size:clamp(3.3rem,7vw,6.7rem);
+      line-height:.95;letter-spacing:-.065em;
+      margin:22px 0 26px;
+      max-width:850px;
+    }
+    .gradient{
+      background:linear-gradient(90deg,var(--text),var(--accent),#b8a9ff);
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+    .hero p{
+      max-width:720px;color:var(--muted);font-size:1.15rem;
+    }
+    .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:13px 18px;border-radius:13px;border:1px solid var(--line);
+      font-weight:700;transition:.2s ease;
+    }
+    .btn-primary{
+      background:var(--text);color:var(--bg);border-color:transparent;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-secondary{background:rgba(255,255,255,.035);color:var(--text)}
+    .hero-card{
+      border:1px solid var(--line);
+      background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.025));
+      border-radius:28px;padding:26px;
+      box-shadow:0 30px 80px rgba(0,0,0,.28);
+    }
+    .profile{
+      display:flex;align-items:center;gap:16px;padding-bottom:22px;border-bottom:1px solid var(--line);
+    }
+    .avatar{
+      width:62px;height:62px;border-radius:18px;object-fit:cover;
+      border:1px solid rgba(255,255,255,.16);
+    }
+    .profile h3{font-size:1.1rem}
+    .profile p{color:var(--muted);font-size:.9rem}
+    .stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+    .stat{
+      padding:17px;border:1px solid var(--line);border-radius:18px;background:rgba(0,0,0,.12)
+    }
+    .stat strong{display:block;font-size:1.2rem}
+    .stat span{color:var(--muted);font-size:.82rem}
+    section{padding:100px 0}
+    .section-head{margin-bottom:34px}
+    .kicker{color:var(--accent);font-size:.8rem;text-transform:uppercase;letter-spacing:.16em;font-weight:800}
+    h2{font-size:clamp(2.1rem,4vw,3.5rem);letter-spacing:-.04em;margin-top:8px}
+    .lead{color:var(--muted);max-width:780px;margin-top:10px}
+    .skills{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+    }
+    .skill{
+      padding:22px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.03);
+    }
+    .skill h3{margin-bottom:8px}
+    .skill p{color:var(--muted);font-size:.94rem}
+    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .project{
+      display:flex;flex-direction:column;min-height:290px;
+      padding:24px;border:1px solid var(--line);border-radius:22px;
+      background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.018));
+    }
+    .tag{
+      display:inline-flex;width:max-content;
+      padding:6px 10px;border-radius:999px;
+      border:1px solid var(--line);color:#c6d4e4;font-size:.75rem;
+      margin-bottom:18px;
+    }
+    .project h3{font-size:1.32rem}
+    .project p{color:var(--muted);margin-top:10px}
+    .project-bottom{margin-top:auto;padding-top:22px;display:flex;justify-content:space-between;align-items:center}
+    .project-link{color:var(--accent);font-weight:700;font-size:.9rem}
+    .about{
+      display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:stretch;
+    }
+    .panel{
+      padding:28px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.03);
+    }
+    .panel p{color:var(--muted)}
+    .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+    .pill{
+      border:1px solid var(--line);padding:8px 11px;border-radius:999px;
+      color:#cbd8e7;font-size:.84rem;
+    }
+    .contact{
+      text-align:center;
+      padding-bottom:110px;
+    }
+    .contact-box{
+      padding:42px 26px;border:1px solid var(--line);border-radius:28px;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(98,216,255,.10), transparent 40%),
+        rgba(255,255,255,.03);
+    }
+    .contact-box p{max-width:680px;margin:12px auto 0;color:var(--muted)}
+    .footer{
+      border-top:1px solid var(--line);
+      padding:24px 0;color:var(--muted);font-size:.86rem;
+      display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;
+    }
+
+    @media (max-width: 900px){
+      .hero-grid,.about{grid-template-columns:1fr}
+      .skills{grid-template-columns:repeat(2,1fr)}
+      .projects{grid-template-columns:1fr}
+      .hero{padding-top:60px}
+      .hero-card{max-width:560px}
+    }
+    @media (max-width: 600px){
+      .container{width:min(var(--max), calc(100% - 26px))}
+      .nav-links{display:none}
+      section{padding:76px 0}
+      .skills{grid-template-columns:1fr}
+      h1{font-size:3.5rem}
+      .hero p{font-size:1rem}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">Houssem<span>.</span></a>
+      <nav class="nav-links">
+        <a href="#expertise">Expertise</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> Data Engineer · Analytics · BI</div>
+
+          <h1>
+            I turn <span class="gradient">raw data</span><br />
+            into useful systems.
+          </h1>
+
+          <p>
+            Data Engineer focused on data integration, ETL, data transformation,
+            Data Quality, analytics and decision-ready dashboards.
+            I build reliable pipelines and practical data products that make complex data easier to use.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://github.com/Housssemsalem" target="_blank" rel="noreferrer">View GitHub</a>
+            <a class="btn btn-secondary" href="#projects">Explore my work</a>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <div class="profile">
+            <img class="avatar" src="https://avatars.githubusercontent.com/u/92686220?v=4" alt="Houssem Salem GitHub avatar" />
+            <div>
+              <h3>Houssem Salem</h3>
+              <p>Data Engineering &amp; Business Intelligence</p>
+            </div>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <strong>3+ years</strong>
+              <span>Data &amp; analytics experience</span>
+            </div>
+            <div class="stat">
+              <strong>Python + SQL</strong>
+              <span>Core engineering stack</span>
+            </div>
+            <div class="stat">
+              <strong>ETL / DQ</strong>
+              <span>Reliable data pipelines</span>
+            </div>
+            <div class="stat">
+              <strong>BI</strong>
+              <span>Tableau &amp; Power BI</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="expertise">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">What I do best</div>
+          <h2>From ingestion to insight.</h2>
+          <p class="lead">
+            My strongest work sits at the intersection of engineering, analytics and business needs:
+            clean pipelines, trusted data and dashboards people can actually use.
+          </p>
+        </div>
+
+        <div class="skills">
+          <article class="skill">
+            <h3>Data Engineering</h3>
+            <p>Designing and automating ETL workflows, transformations, historical loads and repeatable data processes.</p>
+          </article>
+          <article class="skill">
+            <h3>Data Quality</h3>
+            <p>Building validation, monitoring and anomaly checks to keep analytical datasets reliable and usable.</p>
+          </article>
+          <article class="skill">
+            <h3>Analytics &amp; BI</h3>
+            <p>Transforming operational data into KPIs, monitoring views and decision-oriented dashboards.</p>
+          </article>
+          <article class="skill">
+            <h3>Applied Data Science</h3>
+            <p>Exploring machine learning, NLP and predictive approaches when they solve a real data problem.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Selected work</div>
+          <h2>Projects worth exploring.</h2>
+          <p class="lead">A few repositories that represent the areas I enjoy working in most.</p>
+        </div>
+
+        <div class="projects">
+          <article class="project">
+            <span class="tag">Data Engineering · Telecom</span>
+            <h3>Telecom Site Planning Dashboard</h3>
+            <p>
+              A data and BI project around telecom site planning, operational monitoring and
+              visual analysis of network information.
+            </p>
+            <div class="project-bottom">
+              <span>Python · SQL · BI</span>
+              <a class="project-link" href="https://github.com/Housssemsalem/Telecom-site-planning-dashboard" target="_blank" rel="noreferrer">Repository ↗</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <span class="tag">Machine Learning · Telecom</span>
+            <h3>Mobile Network QoE Prediction</h3>
+            <p>
+              A machine learning project focused on predicting mobile network Quality of Experience
+              from network-related data.
+            </p>
+            <div class="project-bottom">
+              <span>Python · ML</span>
+              <a class="project-link" href="https://github.com/Housssemsalem/Mobile-Network-QoE-Prediction" target="_blank" rel="noreferrer">Repository ↗</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <span class="tag">Data Science</span>
+            <h3>Data Science Projects</h3>
+            <p>
+              A broader collection of data science work covering analysis, modeling,
+              experimentation and practical machine-learning workflows.
+            </p>
+            <div class="project-bottom">
+              <span>Python · Data Science</span>
+              <a class="project-link" href="https://github.com/Housssemsalem/Data-Science-Projects" target="_blank" rel="noreferrer">Repository ↗</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <span class="tag">Machine Learning</span>
+            <h3>Machine Learning with Python</h3>
+            <p>
+              Coursework and implementations covering core machine-learning concepts,
+              model development and experimentation with Python.
+            </p>
+            <div class="project-bottom">
+              <span>Python · ML</span>
+              <a class="project-link" href="https://github.com/Housssemsalem/Coursera_IBM_Machine-Learning-with-Python" target="_blank" rel="noreferrer">Repository ↗</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <span class="tag">Portfolio</span>
+            <h3>GitHub Profile</h3>
+            <p>
+              My public space for documenting projects, experiments, technical work and
+              continuous learning across the data ecosystem.
+            </p>
+            <div class="project-bottom">
+              <span>GitHub</span>
+              <a class="project-link" href="https://github.com/Housssemsalem" target="_blank" rel="noreferrer">Profile ↗</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <span class="tag">Open to opportunities</span>
+            <h3>Let’s build something useful.</h3>
+            <p>
+              Interested in Data Engineering, Data Analytics, Business Intelligence and
+              projects where strong data foundations create measurable value.
+            </p>
+            <div class="project-bottom">
+              <span>Paris / Île-de-France</span>
+              <a class="project-link" href="#contact">Contact ↗</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about">
+        <div class="panel">
+          <div class="kicker">About</div>
+          <h2>Engineering mindset.<br/>Business perspective.</h2>
+          <p style="margin-top:16px;">
+            I enjoy working where data is messy, systems need structure and people need
+            answers. My approach is simple: understand the business question, build a
+            robust data flow, validate the result, and present it clearly.
+          </p>
+        </div>
+
+        <div class="panel">
+          <div class="kicker">Core stack</div>
+          <div class="pill-row">
+            <span class="pill">Python</span>
+            <span class="pill">SQL</span>
+            <span class="pill">PostgreSQL</span>
+            <span class="pill">Talend</span>
+            <span class="pill">SSIS</span>
+            <span class="pill">Power BI</span>
+            <span class="pill">Tableau</span>
+            <span class="pill">ETL</span>
+            <span class="pill">Data Quality</span>
+            <span class="pill">Machine Learning</span>
+            <span class="pill">NLP</span>
+            <span class="pill">Git</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div class="kicker">Let’s connect</div>
+          <h2>Have a data problem to solve?</h2>
+          <p>
+            I’m interested in opportunities where I can build reliable data pipelines,
+            improve data quality, automate analytics and turn data into actionable insights.
+          </p>
+          <div class="cta-row" style="justify-content:center;">
+            <a class="btn btn-primary" href="https://github.com/Housssemsalem" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn btn-secondary" href="mailto:houcemsalem@gmail.com">Email me</a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer">
+      <span>© 2026 Houssem Salem</span>
+      <span>Built for GitHub Pages</span>
+    </div>
+  </footer>
+</body>
+</html>
